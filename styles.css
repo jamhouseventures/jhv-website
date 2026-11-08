@@ -1,0 +1,212 @@
+/* Jam House Ventures: shared styles for every page.
+   Colors live in the two blocks below: the first is light mode, the second is dark mode. */
+
+:root {
+  color-scheme: light dark;
+  --bg: #fbfaf6;
+  --text: #1b241f;
+  --muted: #535e57;
+  --accent: #1d5a3d;
+  --line: #d9dbd2;
+  --tag-bg: #e3efe7;
+  --fill-bg: #fff6d8;
+  --fill-line: #8a6a00;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121714;
+    --text: #e9eee9;
+    --muted: #a8b3ab;
+    --accent: #84d2a8;
+    --line: #333d36;
+    --tag-bg: #20382b;
+    --fill-bg: #33290a;
+    --fill-line: #d9b64a;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.wrap {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-underline-offset: 0.15em;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg);
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+/* Header */
+.site-header {
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.logo {
+  display: inline-block;
+  padding: 0.5rem 0;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.site-nav,
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.site-nav a,
+.footer-nav a {
+  display: inline-block;
+  min-height: 2.75rem;
+  padding: 0.6rem 0;
+}
+
+a[aria-current="page"] {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Page content */
+main.wrap {
+  padding-top: 2.5rem;
+  padding-bottom: 3.5rem;
+}
+
+h1,
+h2 {
+  font-family: var(--serif);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.25rem, 8vw, 3.25rem);
+}
+
+h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.125rem;
+}
+
+p,
+ul {
+  margin: 0 0 1rem;
+}
+
+li {
+  margin-bottom: 0.35rem;
+}
+
+section {
+  margin-top: 2.5rem;
+}
+
+.lead {
+  font-size: 1.1875rem;
+  color: var(--muted);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.email {
+  font-size: 1.1875rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.tag {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  background: var(--tag-bg);
+  color: var(--text);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Marks the parts of the privacy policy the owner still has to write.
+   Search privacy.html for "FILL IN" to find each one. */
+.fill-in {
+  padding: 0.75rem 1rem;
+  border: 2px dashed var(--fill-line);
+  border-radius: 6px;
+  background: var(--fill-bg);
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 1.25rem 0 1.5rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
