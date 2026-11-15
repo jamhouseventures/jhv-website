@@ -173,10 +173,16 @@ section {
   color: var(--muted);
 }
 
-.email {
+.email,
+.phone {
   font-size: 1.1875rem;
   font-weight: 600;
   overflow-wrap: anywhere;
+}
+
+/* Keeps each footer item (name, city, phone) from breaking mid-way on narrow screens. */
+.nowrap {
+  white-space: nowrap;
 }
 
 .tag {
